@@ -94,6 +94,6 @@ func checkerrF(e error) {
 func checkerrP(e error) {
 	if e != nil {
 		fmt.Fprintf(os.Stderr, e.Error())
-		os.Exit(-1)
+		os.Exit(UNKNOWN)
 	}
 }
