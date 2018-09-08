@@ -6,7 +6,7 @@ Nagios plugin to check AWS Cloudwatch Alarm and return status. Useful for when
 
 USAGE
 =====
-$ ./cwaq -i <instance-id> -m <metric> [-n <namespace]
+$ ./cwaq -i <instance-id> -m <metric> [-n <namespace>]
 
 
 INSTALL
@@ -18,7 +18,7 @@ $ go build
 
 Make sure the server you are running this program on has the keys for the hosts
 it is checking, or for an added security benefit, run on an AWS instance and
-give the hosts a policy to allow AWS Cloudwatch access.
+give the hosts a policy to allow AWS Cloudwatch access (eg. "Action" : "cloudwatch:DescribeAlarmsForMetric").
 
 NOTES
 =====
