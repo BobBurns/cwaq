@@ -49,7 +49,7 @@ func main() {
 	var dims []*cloudwatch.Dimension
 	dims = append(dims, &cloudwatch.Dimension{
 		Name:  aws.String("InstanceId"),
-		Value: aws.String(*idFlag), // i-009614d62f6578510
+		Value: aws.String(*idFlag),
 	})
 
 	params := cloudwatch.DescribeAlarmsForMetricInput{
@@ -65,6 +65,8 @@ func main() {
 	checkerrP(err)
 
 	// Check result and output nagios friendly exit codes
+	// for more detail about MetricAlarm type see
+	// https://docs.aws.amazon.com/sdk-for-go/api/service/cloudwatch/#MetricAlarm
 	n := len(resp.MetricAlarms) - 1
 	if n >= 0 {
 		a := *resp.MetricAlarms[n].StateValue
