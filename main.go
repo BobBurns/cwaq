@@ -18,7 +18,7 @@ const (
 )
 
 func usage() {
-	fmt.Println("Usage: ./cwaq -i <instance-id> -m <metric> [-n <namespace]")
+	fmt.Println("Usage: ./cwaq -i <instance-id> -m <metric> [-n <namespace>]")
 }
 
 func main() {
@@ -81,6 +81,8 @@ func main() {
 			os.Exit(UNKNOWN)
 		}
 	}
+	fmt.Println("Alarm Query Failed. Possibly because of bad parameters. | state=0")
+	os.Exit(UNKNOWN)
 
 }
 
