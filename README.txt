@@ -1,8 +1,8 @@
 CLOUDWATCH ALARM QUERY - cwaq
 ==============================
 Nagios plugin to check AWS Cloudwatch Alarm and return status. Useful for when
- you just want to check if a predefined alarm is present on a AWS instance and
- utilize nagios alerting capability.
+you just want to check if a predefined alarm is present on an AWS instance and
+utilize nagios alerting capability.
 
 USAGE
 =====
@@ -18,7 +18,8 @@ $ go build
 
 Make sure the server you are running this program on has the keys for the hosts
 it is checking, or for an added security benefit, run on an AWS instance and
-give the hosts a policy to allow AWS Cloudwatch access (eg. "Action" : "cloudwatch:DescribeAlarmsForMetric").
+give it an IAM role with a policy to allow AWS Cloudwatch access 
+(eg. "Action" : "cloudwatch:DescribeAlarmsForMetric").
 
 NOTES
 =====
